@@ -24,10 +24,14 @@ export async function getStaticProps({ params }){
         content_type: "product",
         "fields.slug": params.slug,
     });
+    let alldata = await client.getEntries({
+        conten_type: "title",
+    })
 
     return{
         props: {
             product: data.items[0],
+            product: alldata.items
         },
       revalidate: 1
     }
