@@ -30,7 +30,7 @@ export async function getStaticProps({ params }){
 
     return{
         props: {
-            product: data.items[0],
+            product: data.items,
             product: alldata.items
         },
       revalidate: 1
